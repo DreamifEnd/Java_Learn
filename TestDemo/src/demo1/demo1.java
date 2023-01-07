@@ -10,11 +10,19 @@ package demo1;
 interface A {
     void fun();
 }
-class B implements A {
+interface C {
+    void fun2();
+}
+class B implements A,C {
 
     @Override
     public void fun() {
         System.out.println("hahaha");
+    }
+
+    @Override
+    public void fun2() {
+        System.out.println("666");
     }
 }
 public class demo1 {
