@@ -21,9 +21,12 @@ public class Main {
         int choice = scanner.nextInt();
         if(choice==1) {
             return new Administrator(name);
-        } else {
+        } else if(choice == 0){
             return new NormalUser(name);
+        } else {
+            throw new UserNameException("输入错误");
         }
+
     }
     public static void main(String[] args) {
         User user = login();
