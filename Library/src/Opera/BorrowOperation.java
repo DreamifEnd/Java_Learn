@@ -16,7 +16,6 @@ import java.util.Scanner;
 public class BorrowOperation implements IOperation{
     @Override
     public void work(BookList bookList) {
-        //System.out.println("借阅成功");
         System.out.println("输入你想借阅的书籍名: ");
         Scanner scanner = new Scanner(System.in);
         String name = scanner.nextLine();

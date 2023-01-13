@@ -10,5 +10,5 @@ import Book.BookList;
  * Time: 9:58
  */
 public interface IOperation {
-    void work(BookList bookList);
+        void work(BookList bookList);
 }

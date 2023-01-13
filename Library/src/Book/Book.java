@@ -7,11 +7,16 @@ package Book;
  * Date: 2023-01-08
  * Time: 9:16
  */
+
+/**
+ *
+ * @author xuyan
+ */
 public class Book {
     private String name;
     private String author;
     private int price;
-    private boolean is_Borrow;
+    private boolean isBorrow;
 
     public Book() {
         this.name= "西游记" ;
@@ -49,11 +54,11 @@ public class Book {
     }
 
     public boolean isIs_Borrow() {
-        return is_Borrow;
+        return isBorrow;
     }
 
     public void setIs_Borrow(boolean is_Borrow) {
-        this.is_Borrow = is_Borrow;
+        this.isBorrow = is_Borrow;
     }
 
     @Override
@@ -62,7 +67,7 @@ public class Book {
                 "name='" + name + '\'' +
                 ", author='" + author + '\'' +
                 ", price=" + price +
-                ", is_Borrow=" + is_Borrow +
+                ", is_Borrow=" + isBorrow +
                 '}';
     }
 }

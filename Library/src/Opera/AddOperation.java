@@ -20,7 +20,6 @@ public class AddOperation implements IOperation{
 
     @Override
     public void work(BookList bookList) {
-        //System.out.println("新增图书");
         System.out.println("输入你想添加的书籍名: ");
         Scanner scanner = new Scanner(System.in);
         String name = scanner.nextLine();

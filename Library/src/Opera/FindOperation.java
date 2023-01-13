@@ -59,13 +59,6 @@ public class FindOperation implements IOperation{
         return -1;
     }
     public static Book checkBorrow(BookList bookList,String name) {
-//        for (int i = 0; i < bookList.getUseSize(); i++) {
-//            Book book = bookList.getBook(i);
-//            if (book.isIs_Borrow()) {
-//                return true;
-//            }
-//        }
-//        return false;
         int subscript = findSubscript(bookList,name);
         if(bookList.getBook(subscript).isIs_Borrow()) {
             return null;

@@ -15,7 +15,6 @@ import java.util.Scanner;
 public class DelOperation implements IOperation{
     @Override
     public void work(BookList bookList) {
-        //System.out.println("删除图书");
         System.out.println("输入你想删除的书籍名: ");
         Scanner scanner = new Scanner(System.in);
         String name = scanner.nextLine();
