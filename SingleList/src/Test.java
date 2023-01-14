@@ -14,11 +14,10 @@ public class Test {
         list.addFirst(1);
         list.addLast(2);
         list.addIndex(2,20);
-        //list.delIndex(2);
+        list.delIndex(2);
         list.display();
         list.remove(12);
         list.display();
-        System.out.println(b);
 
     }
 
