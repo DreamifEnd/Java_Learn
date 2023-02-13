@@ -1,5 +1,7 @@
+import java.util.Deque;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
-
 /**
  * Created with IntelliJ IDEA.
  *
@@ -10,6 +12,9 @@ import java.util.Stack;
  */
 public class MyStack {
     public static void main(String[] args) {
+        //队列
+        Deque<Integer> stack1 = new LinkedList<>();
+        Queue<Integer> stack2 = new LinkedList<>();
         Stack<Integer> stack = new Stack<>();
         stack.add(1);
         Integer s1 = stack.peek();
@@ -19,5 +24,7 @@ public class MyStack {
         System.out.println(s2);
         stack.add(12);
         stack.peek();
+        int a = 0;
+        System.out.println(a);
     }
 }
