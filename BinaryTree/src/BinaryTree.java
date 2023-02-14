@@ -14,7 +14,6 @@ public class BinaryTree<pubilc> {
         int val;
         TreeNode left;
         TreeNode right;
-
         TreeNode(int x) {
             val = x;
         }
@@ -23,6 +22,43 @@ public class BinaryTree<pubilc> {
         root = new TreeNode(data);
     }
 
+    public boolean isSubtree(TreeNode root, TreeNode subRoot) {
+        if (isSameTree(root,subRoot)) {
+            return true;
+        }
+        if(isSameTree(root.left,subRoot)) {
+            return true;
+        }
+        if(isSameTree(root.right,subRoot)) {
+            return true;
+        }
+        return false;
+    }
+    public boolean isSameTree(TreeNode q,TreeNode p) {
+        if(p==null&&q!=null||p!=null&&q==null) {
+            return false;
+        }
+        if(p==null&&q==null) {
+            return true;
+        }
+        if(p.val!= q.val) {
+            return false;
+        }
+        return isSameTree(q.left, p.left)&&isSameTree(q.right, q.right);
+    }
+    public TreeNode find(TreeNode root,int val) {
+        if(root == null) {
+            return null;
+        }
+        if(root.val==val) {
+            return root;
+        }
+        TreeNode left = find(root.left,val);
+        if (left == null) {
+            return find(root.right,val);
+        }
+        return left;
+    }
     /**
      * 获取二叉树节点个数
      * @param current
@@ -132,7 +168,6 @@ public class BinaryTree<pubilc> {
     public void inOrderTraversal() {
         inOrderTraversalRecursive(root);
     }
-
     private void inOrderTraversalRecursive(TreeNode current) {
         if (current != null) {
             inOrderTraversalRecursive(current.left);

@@ -27,5 +27,6 @@ public class Test {
         System.out.println("Post-order traversal:");
         tree.postOrderTraversal();
         System.out.println();
+        System.out.println(tree.find(tree.root,1).val);
     }
 }
