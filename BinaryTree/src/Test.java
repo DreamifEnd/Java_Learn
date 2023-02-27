@@ -1,3 +1,5 @@
+import java.util.List;
+
 /**
  * Created with IntelliJ IDEA.
  *
@@ -19,7 +21,6 @@ public class Test {
         System.out.println("Pre-order traversal:");
         tree.preOrderTraversal();
         System.out.println();
-
         System.out.println("In-order traversal:");
         tree.inOrderTraversal();
         System.out.println();
@@ -28,5 +29,7 @@ public class Test {
         tree.postOrderTraversal();
         System.out.println();
         System.out.println(tree.find(tree.root,1).val);
+        List<List<Integer>> list = tree.level();
+        System.out.println(list);
     }
 }

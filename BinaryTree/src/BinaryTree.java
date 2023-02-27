@@ -1,4 +1,8 @@
 import javax.swing.tree.TreeNode;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
 
 /**
  * Created with IntelliJ IDEA.
@@ -34,6 +38,31 @@ public class BinaryTree<pubilc> {
         }
         return false;
     }
+
+    public List<List<Integer>> level() {
+        List<List<Integer>> list= new ArrayList<>();
+        Queue<TreeNode> level = new LinkedList<>();
+        level.offer(root);
+
+        while(!level.isEmpty()) {
+            int size =level.size();
+            List<Integer> tmp = new ArrayList<>();
+            while(size!=0) {
+                TreeNode cur = level.poll();
+                tmp.add(cur.val);
+                size--;
+                if (cur.left != null) {
+                    level.offer(cur.left);
+                }
+                if (cur.right != null) {
+                    level.offer(cur.right);
+                }
+            }
+            list.add(tmp);
+        }
+        return list;
+    }
+
     public boolean isSameTree(TreeNode q,TreeNode p) {
         if(p==null&&q!=null||p!=null&&q==null) {
             return false;
@@ -46,6 +75,8 @@ public class BinaryTree<pubilc> {
         }
         return isSameTree(q.left, p.left)&&isSameTree(q.right, q.right);
     }
+
+
     public TreeNode find(TreeNode root,int val) {
         if(root == null) {
             return null;
@@ -59,6 +90,8 @@ public class BinaryTree<pubilc> {
         }
         return left;
     }
+
+
     /**
      * 获取二叉树节点个数
      * @param current
@@ -67,6 +100,7 @@ public class BinaryTree<pubilc> {
     public int size(TreeNode current) {
         return sizeRecursive(current);
     }
+
 
     private int sizeRecursive(TreeNode current) {
         if (root == null) {
@@ -157,11 +191,12 @@ public class BinaryTree<pubilc> {
     }
 
     private void preOrderTraversalRecursive(TreeNode current) {
-        if (current != null) {
-            System.out.print(current.val + " ");
-            preOrderTraversalRecursive(current.left);
-            preOrderTraversalRecursive(current.right);
+        if (current == null) {
+           return ;
         }
+        System.out.print(current.val + " ");
+        preOrderTraversalRecursive(current.left);
+        preOrderTraversalRecursive(current.right);
     }
 
     // In-order traversal
